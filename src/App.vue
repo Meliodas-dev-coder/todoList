@@ -82,6 +82,8 @@ export default {
     },
     onUpdate(id) {
       this.tasks = this.tasks.map((task) => task.id === id ? { ...task, text: this.form.newTitle || task.text, day: this.form.newDay || task.day } : task)
+      this.form.newTitle=''
+      this.form.newDay=''
       this.$bvModal.hide('bv-modal-example')
     }
   },
